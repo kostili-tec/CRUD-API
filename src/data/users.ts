@@ -1,4 +1,5 @@
-export const users = [
+import { IUserData } from '../types/interfaces.js';
+export const users: IUserData[] = [
   {
     id: '1',
     username: 'John Doe',

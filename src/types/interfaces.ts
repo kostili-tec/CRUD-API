@@ -1,7 +1,7 @@
 import { IncomingMessage, ServerResponse } from 'http';
 
 export interface IUserData {
-  id: string;
+  id?: string;
   username: string;
   age: number;
   hobbies: string[];

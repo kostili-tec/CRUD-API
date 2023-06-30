@@ -2,7 +2,8 @@ import http from 'http';
 import 'dotenv/config';
 
 import getRequest from './methods/getRequest.js';
-import { IRequest, IUserData } from './types/interfaces';
+import postRequest from './methods/postRequest.js';
+import { IRequest } from './types/interfaces';
 import { users } from './data/users.js';
 
 const PORT = process.env.PORT || 5001;
@@ -14,10 +15,10 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
     case 'GET':
       getRequest(myRequest, res);
       break;
-    /* case 'POST':
-        postReq(req, res);
-        break;
-      case 'PUT':
+    case 'POST':
+      postRequest(myRequest, res);
+      break;
+    /* case 'PUT':
         putReq(req, res);
         break;
       case 'DELETE':
