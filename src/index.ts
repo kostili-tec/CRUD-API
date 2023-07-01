@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 import getRequest from './methods/getRequest.js';
 import postRequest from './methods/postRequest.js';
+import putRequest from './methods/putRequest.js';
 import deleteRequest from './methods/deleteRequest.js';
 import { IRequest } from './types/interfaces';
 import { users } from './data/users.js';
@@ -19,9 +20,9 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
     case 'POST':
       postRequest(myRequest, res);
       break;
-    /* case 'PUT':
-        putReq(req, res);
-        break; */
+    case 'PUT':
+      putRequest(myRequest, res);
+      break;
     case 'DELETE':
       deleteRequest(myRequest, res);
       break;
