@@ -22,19 +22,17 @@ export default (req: IRequest, res: ServerResponse) => {
           res.write(JSON.stringify({ message: 'User updated' }));
           res.end();
         } else {
-          res.statusCode = 404;
+          res.writeHead(404, { 'Content-Type': 'application/json' });
           res.write(JSON.stringify({ error: 'User not exist' }));
           res.end();
         }
       } catch (error) {
-        res.statusCode = 400;
-        res.setHeader('Content-Type', 'application/json');
+        res.writeHead(400, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Invalid JSON data', message: error }));
       }
     });
   } else {
-    res.statusCode = 400;
-    res.write(JSON.stringify({ error: 'User id is invalid' }));
-    res.end();
+    res.writeHead(400, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ error: 'User id is invalid' }));
   }
 };

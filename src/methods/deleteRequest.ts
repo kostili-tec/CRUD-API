@@ -10,16 +10,14 @@ export default (req: IRequest, res: ServerResponse) => {
     if (findUser > -1) {
       users.splice(findUser, 1);
       res.statusCode = 204;
-      res.writeHead(204, { 'Content-Type': 'application/json' });
-      res.write(JSON.stringify({ message: `Delete user with id: ${id}` }));
       res.end();
     } else {
-      res.statusCode = 404;
+      res.writeHead(404, { 'Content-Type': 'application/json' });
       res.write(JSON.stringify({ error: 'User not exist' }));
       res.end();
     }
   } else {
-    res.statusCode = 400;
+    res.writeHead(400, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify({ error: 'User id is invalid' }));
     res.end();
   }
