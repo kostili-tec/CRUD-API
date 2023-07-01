@@ -3,6 +3,7 @@ import 'dotenv/config';
 
 import getRequest from './methods/getRequest.js';
 import postRequest from './methods/postRequest.js';
+import deleteRequest from './methods/deleteRequest.js';
 import { IRequest } from './types/interfaces';
 import { users } from './data/users.js';
 
@@ -20,10 +21,10 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
       break;
     /* case 'PUT':
         putReq(req, res);
-        break;
-      case 'DELETE':
-        deleteReq(req, res);
         break; */
+    case 'DELETE':
+      deleteRequest(myRequest, res);
+      break;
     default:
       res.statusCode = 404;
       res.setHeader('Content-Type', 'application/json');
