@@ -45,3 +45,5 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
 server.listen(PORT, () => {
   console.log(`Server started at port: ${PORT}`);
 });
+
+export default {server}

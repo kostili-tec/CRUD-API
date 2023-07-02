@@ -14,7 +14,7 @@ module.exports = {
                 "node": true
             },
             "files": [
-                "src/*.ts"
+                "src/*.ts",
             ],
             "parserOptions": {
                 "sourceType": "script"
