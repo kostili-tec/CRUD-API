@@ -1,6 +1,6 @@
 {
   "ignore": ["node_modules"],
   "watch": ["./src/*"],
-  "exec": "npm start",
-  "ext": "ts"
+  "exec": "npx ts-node ./src/server.ts",
+  "ext": ".ts, .js"
 }

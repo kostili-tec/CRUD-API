@@ -5,9 +5,9 @@
   "main": "./src/index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon",
-    "build": "tsc ./src/index.ts",
-    "start": "ts-node ./src/index.ts",
+    "start:dev": "npx nodemon",
+    "start:build": "npm run build && node dist/server",
+    "build": "npx tsc",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix"
   },

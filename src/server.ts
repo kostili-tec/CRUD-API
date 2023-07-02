@@ -5,7 +5,7 @@ import getRequest from './methods/getRequest.js';
 import postRequest from './methods/postRequest.js';
 import putRequest from './methods/putRequest.js';
 import deleteRequest from './methods/deleteRequest.js';
-import { IRequest } from './types/interfaces';
+import { IRequest } from './types/interfaces.js';
 import { users } from './data/users.js';
 
 const PORT = process.env.PORT || 5001;
