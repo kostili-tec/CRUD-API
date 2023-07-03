@@ -45,3 +45,8 @@ const server = http.createServer((req: http.IncomingMessage, res: http.ServerRes
 server.listen(PORT, () => {
   console.log(`Server started at port: ${PORT}`);
 });
+
+server.on('close', () => {
+  console.log('Server closed');
+  process.exit(1);
+});

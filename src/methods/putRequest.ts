@@ -10,7 +10,6 @@ export default (req: IRequest, res: ServerResponse) => {
   if (baseUrl === '/api/users/' && id && !isNaN(parseInt(id))) {
     req.on('data', (chunk) => {
       data += chunk;
-      console.log(data);
     });
     req.on('end', () => {
       try {

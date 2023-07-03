@@ -15,7 +15,6 @@ export default (req: IRequest, res: ServerResponse) => {
           const newId = getMaxId(users);
           newUser.id = newId;
           users.push(newUser);
-          console.log(newUser);
           res.statusCode = 201;
           res.setHeader('Content-Type', 'application/json');
           res.end(JSON.stringify({ message: 'User added successfully' }));
